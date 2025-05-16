@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Undangan Resepsi Robby & Lintan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(135deg, #ffe5ec, #fef9f9, #e0f7fa);
+      overflow-x: hidden;
+      color: #5c3b1e;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 60px auto;
+      background: #ffffffdd;
+      padding: 3rem 2rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .date-banner {
+      background-color: #a0775a;
+      color: white;
+      padding: 10px 24px;
+      border-radius: 50px;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-weight: bold;
+      font-size: 18px;
+      animation: fadeIn 1s ease-in;
+    }
+
+    h1 {
+      font-size: 28px;
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    h2 {
+      font-size: 36px;
+      font-family: 'Great Vibes', cursive;
+      margin: 10px 0 30px;
+      color: #8c5c3f;
+      animation: fadeInUp 1.8s ease-in;
+    }
+
+    .image-center {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin: 30px 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      animation: fadeInUp 2s ease-in;
+    }
+
+    .details {
+      margin-top: 20px;
+      font-size: 18px;
+      animation: fadeInUp 2.2s ease-in;
+    }
+
+    .details div {
+      margin-bottom: 10px;
+    }
+
+    .location {
+      margin-top: 25px;
+      font-size: 16px;
+      animation: fadeInUp 2.4s ease-in;
+    }
+
+    .location a {
+      text-decoration: none;
+      color: #5c3b1e;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .location a:hover {
+      color: #a0775a;
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #888;
+      animation: fadeIn 2.6s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 2rem 1rem;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+
+      .image-center {
+        max-height: 300px;
+      }
+    }
+
+    /* Efek bunga jatuh */
+    .flower {
+      position: fixed;
+      top: -50px;
+      width: 30px;
+      height: 30px;
+      background-image: url('https://i.ibb.co/0D5FLQ9/flower.png');
+      background-size: cover;
+      z-index: 1;
+      animation: fall linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-50px) rotate(0deg);
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Musik Otomatis -->
+<audio autoplay loop controls style="position: fixed; bottom: 20px; right: 20px; z-index: 10;">
+  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+  Browser Anda tidak mendukung pemutar audio.
+</audio>
+
+<!-- Efek bunga jatuh -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    for (let i = 0; i < 20; i++) {
+      let flower = document.createElement("div");
+      flower.className = "flower";
+      flower.style.left = Math.random() * 100 + "vw";
+      flower.style.animationDuration = (5 + Math.random() * 5) + "s";
+      flower.style.opacity = Math.random();
+      document.body.appendChild(flower);
+    }
+  });
+</script>
+
+<!-- Konten Utama -->
+<div class="container">
+  <div class="date-banner">25 Agustus 2025</div>
+  <h1>Undangan Resepsi</h1>
+  <h2>Robby & Lintan</h2>
+
+  <img src="gambar12.jpeg" alt="Gambar Pernikahan" class="image-center" />
+
+  <div class="details">
+    <div><strong>Akad:</strong> 09.00 WIB</div>
+    <div><strong>Resepsi:</strong> 10.00 WIB</div>
+  </div>
+
+  <div class="location">
+    📍 <a href="https://www.google.com/maps?q=123+Anywhere+St,+Any+City" target="_blank">
+      123 Anywhere St., Any City</a>
+  </div>
+
+  <footer>
+    Kami menantikan kehadiran dan doa restu Anda 💐
+  </footer>
+</div>
+
+</body>
+</html>
